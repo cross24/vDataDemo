@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>demo</title>
+	<link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/core.css">
+	<link rel="stylesheet" href="./css/icomoon.css">
+	<link rel="stylesheet" href="./css/glyphicon.css">
+	<link rel="stylesheet" href="./css/plugin.css">
+	<link rel="stylesheet" href="./css/dThemes.css">
+	<link rel="stylesheet" href="./css/colorpicker.css">
+
+	<script src="https://cdn.bootcss.com/echarts/4.1.0/echarts.min.js"></script>
+	<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+	<script src="https://cdn.bootcss.com/jspdf/1.4.1/jspdf.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+	<script src="./js/utils/colorpicker.js"></script>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<!--nav-primary begin-->
+	<div class="nav-primary">
+		<a class="logo">
+			<i class="icon-BIT"></i>
+		</a>
+		<ul class="m_nav">
+			<li id="left_nume_dashboard" class="left_li left-li-dashboard active">
+				<a class="ajaxlink" href="#">
+					<i class="icon-uniE610"></i>
+				</a>
+				<div class="nav-tip">
+					<span class="rt-dm"></span>
+					<span class="rt-tip-text">仪表盘</span>
+				</div>
+			</li>
+			<li id="left_nume_datasource" class="left_li left-li-datasource">
+				<a class="ajaxlink" href="#"><i class="icon-uniE602"></i></a>
+				<div class="nav-tip">
+					<span class="rt-dm"></span>
+					<span class="rt-tip-text">数据</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--nav-primary end-->
+
+	<!--wrap_content begin-->
+	<div class="wrap_content">
+		<div class="side_scope sidebar_small">
+			<div class="m_header bg2 clearfix">
+				<h2>仪表盘画布编辑</h2>
+			</div>
+			<div class="m_fg">
+				<div class="m_fg_list">
+					<ul class="canvas-tumbnail-list">
+						<!-- <li style="cursor:pointer" class="dui-canvas-item canvas_small_thumbnail active">
+							<div class="canvas_small">
+								<img src="./images/canvas.png" alt="">
+								<div class="canvas_tip" style="display: none;">
+									<p>要删除此画布吗?</p>
+									<div>
+										<a data-id="73271" class="btn btn-green btn-xsm btn-ok-btn">确认</a>
+										<a class="btn btn-grey btn-xsm ml5 btn-cancel-btn">取消</a>
+									</div>
+								</div>
+							</div>
+							<div class="m_sn">1</div>
+							<div class="canvas_dsm">
+								<a class="canvas-up-index" data-id="73271"><i class="glyphicon glyphicon-arrow-up"></i></a>
+								<a class="canvas-down-index" data-id="73271"><i class="glyphicon glyphicon-arrow-down"></i></a>
+								<a class="canvas-remove" data-id="73271"><i class="glyphicon glyphicon-trash"></i></a>
+								<a class="canvas-copy" data-id="73271" data-index="0"><i class="glyphicon glyphicon-file"></i></a>
+								<a class="canvas-add" data-id="73271" data-index="0"><i class="glyphicon glyphicon-plus"></i></a>
+							</div>
+						</li> -->
+
+					</ul>
+					<div class="m_fb_add">
+						<a href="javascript:;" class="add_canvas">
+							<i class="glyphicon glyphicon-plus"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m_main">
+			<div class="col_title">
+				<div class="toolbar">
+					<ul>
+						<li class="tab-menu-li">
+							<a href="javascript:;" class="tool-bar-item">
+								<i class="icon-uniE60A"></i>
+								<p>图表</p>
+							</a>
+							<div class="tool_chart" id="tool_chart">
+								<ul>
+									<li><a data-id="34302" data-type="chart-table" class="tpl-chart-list"><i class="icon_chart17"></i>
+											<p>表格图</p>
+										</a></li>
+									<li><a data-id="34303" data-type="chart-text" class="tpl-chart-list"><i class="icon_chart18"></i>
+											<p>文本图</p>
+										</a></li>
+									<li><a data-id="34304" data-type="chart-line" class="tpl-chart-list"><i class="icon_chart1"></i>
+											<p>折线图</p>
+										</a></li>
+									<li><a data-id="34305" data-type="chart-area" class="tpl-chart-list"><i class="icon_chart2"></i>
+											<p>面积图</p>
+										</a></li>
+									<li><a data-id="34306" data-type="chart-column" class="tpl-chart-list"><i class="icon_chart3"></i>
+											<p>柱状图</p>
+										</a></li>
+									<li><a data-id="34307" data-type="chart-bar" class="tpl-chart-list"><i class="icon_chart4"></i>
+											<p>条形图</p>
+										</a></li>
+									<li><a data-id="34308" data-type="chart-pie" class="tpl-chart-list"><i class="icon_chart5"></i>
+											<p>饼图</p>
+										</a></li>
+									<li><a data-id="34309" data-type="chart-pie" class="tpl-chart-list"><i class="icon_chart24"></i>
+											<p>行饼图</p>
+										</a></li>
+									<li><a data-id="34310" data-type="chart-pie" class="tpl-chart-list"><i class="icon_chart24"></i>
+											<p>层饼图</p>
+										</a></li>
+									<li><a data-id="34311" data-type="chart-rose-pie" class="tpl-chart-list"><i class="icon_chart19"></i>
+											<p>南丁格尔玫瑰图</p>
+										</a></li>
+									<li><a data-id="34312" data-type="chart-scatter" class="tpl-chart-list"><i class="icon_chart12"></i>
+											<p>散点图</p>
+										</a></li>
+									<li><a data-id="34313" data-type="chart-bubble" class="tpl-chart-list"><i class="icon_chart13"></i>
+											<p>气泡图</p>
+										</a></li>
+									<li><a data-id="34314" data-type="chart-radar" class="tpl-chart-list"><i class="icon_chart6"></i>
+											<p>雷达图</p>
+										</a></li>
+									<li><a data-id="34315" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart25"></i>
+											<p>行雷达图</p>
+										</a></li>
+									<li><a data-id="34317" data-type="chart-gauge" class="tpl-chart-list"><i class="icon_chart8"></i>
+											<p>刻度仪表盘</p>
+										</a></li>
+									<li><a data-id="34318" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart7"></i>
+											<p>阈值仪表盘</p>
+										</a></li>
+									<li><a data-id="34319" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart9"></i>
+											<p>多指针仪表盘</p>
+										</a></li>
+									<li><a data-id="34320" data-type="chart-doughnut" class="tpl-chart-list"><i class="icon_chart10"></i>
+											<p>环形图</p>
+										</a></li>
+									<li><a data-id="34333" data-type="chart-nest-pie" class="tpl-chart-list"><i class="icon_chart11"></i>
+											<p>嵌套环形图</p>
+										</a></li>
+									<li><a data-id="34334" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart20"></i>
+											<p>四象限图</p>
+										</a></li>
+									<li><a data-id="34337" data-type="chart-area-map" class="tpl-chart-list"><i class="icon_chart16"></i>
+											<p>区域地图</p>
+										</a></li>
+									<li><a data-id="34339" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart14"></i>
+											<p>散点地图</p>
+										</a></li>
+									<li><a data-id="34341" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart15"></i>
+											<p>迁徙地图</p>
+										</a></li>
+									<li><a data-id="34344" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart21"></i>
+											<p>百度地图</p>
+										</a></li>
+									<li><a data-id="34346" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart22"></i>
+											<p>Bing地图</p>
+										</a></li>
+									<li><a data-id="34348" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart23"></i>
+											<p>K线图</p>
+										</a></li>
+									<li><a data-id="34349" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart26"></i>
+											<p>杜邦图</p>
+										</a></li>
+									<li><a data-id="168775" data-type="tpl_chart" class="tpl-chart-list"><i class=""></i>
+											<p>堆叠南丁格尔玫瑰图</p>
+										</a></li>
+									<li><a data-id="168780" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart31"></i>
+											<p>瀑布图</p>
+										</a></li>
+									<li><a data-id="168781" data-type="tpl_chart" class="tpl-chart-list"><i class="icon_chart15"></i>
+											<p>温度计图</p>
+										</a></li>
+									<li><a data-id="169225" data-type="chart-funnel" class="tpl-chart-list"><i class="icon_chart27"></i>
+											<p>漏斗图</p>
+										</a></li>
+									<li class="insert_chart tpl-chart-list" data-type="my_chart"> <a>插入已有<br>图表模板</a> </li>
+								</ul>
+							</div>
+						</li>
+						<li class="tab-menu-li">
+							<a href="javascript:;" class="tool-bar-item" onclick="addInput()">
+								<i class="icon-uniE611"></i>
+								<p>文字</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="m-export">
+					<ul>
+						<li><a href="javascript:;" class="btn btn-gray btn-sm btn-save">保存</a></li>
+						<li><a href="javascript:;" class="btn btn-gray btn-sm btn-preview-btn">预览</a></li>
+						<li>
+							<a href="javascript:;" class="btn btn-gray btn-sm">导出</a>
+							<ul class="dropdown-menu export-canvas-ul">
+								<li class="export-canvas-item">
+									<a href="javascript:;" class="btn-export-xlsx">导出为XLSX</a>
+								</li>
+								<li class="export-canvas-item">
+									<a href="javascript:;" class="btn-export-img">导出为图片</a>
+								</li>
+								<li class="export-canvas-item">
+									<a href="javascript:;" class="btn-export-pdf">导出为PDF</a>
+								</li>
+							</ul>
+						</li>
+						<li><a href="javascript:;" onclick="" class="btn btn-gray btn-sm btn-push">发布</a></li>
+					</ul>
+				</div>
+				<div class="m_tb_title">
+					<input id="dashboard-name" type="text" value="" class="dashboard-name-input form-control w230" placeholder="仪表盘名称">
+				</div>
+			</div>
+			<div class="canvas_box">
+				<div class="canvas_box_main">
+					<!-- <div class="dElement dCanvas light hover" id="canvas-1" style="background-color: transparent;position: absolute;top: 45px;right: 50px;left: 40px;bottom: 40px;">
+						<div class="d-background" style="position: absolute; width: 100%; height: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px; z-index: 1;"></div>
+						<img class="d-image" alt="" onselectstart="return false;" src="" style="position: absolute; width: 100%; height: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px; z-index: 2; border: none; display: none;">
+						<div class="d-content" style="position: relative; width: 100%; height: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px; z-index: 4;">
+							<div id="drag">
+								<div class="title">
+									<h2>这是一个可以拖动的窗口</h2>
+									<div>
+										<a class="min" href="javascript:;" title="最小化"></a>
+										<a class="max" href="javascript:;" title="最大化"></a>
+										<a class="revert" href="javascript:;" title="还原"></a>
+										<a class="close" href="javascript:;" title="关闭"></a>
+									</div>
+								</div>
+								<div class="resizeL"></div>
+								<div class="resizeT"></div>
+								<div class="resizeR"></div>
+								<div class="resizeB"></div>
+								<div class="resizeLT"></div>
+								<div class="resizeTR"></div>
+								<div class="resizeBR"></div>
+								<div class="resizeLB"></div>
+								<div class="content">
+									① 窗口可以拖动；<br />
+									② 窗口可以通过八个方向改变大小；<br />
+									③ 窗口可以最小化、最大化、还原、关闭；<br />
+									④ 限制窗口最小宽度/高度。
+								</div>
+							</div>
+						</div>
+					</div> -->
+				</div>
+				<div class="small-tip"></div>
+			</div>
+			<div class="aside_md_sm" id="cannavas-edit-panel" style="display:block">
+				<div class="aside_sm_box">
+					<div class="m_panel_heading" style="border-bottom:1px solid #eee">
+						<ul class="nav_tab m_tab_side aside_sm_tab">
+							<li class="active"><a href="#huabu" data-toggle="tab" aria-expanded="true">页面设置</a></li>
+							<!-- <li class=""><a href="#guanlian" data-toggle="tab" aria-expanded="false">元素</a></li> -->
+							<!-- <li><a href="#shebiao" data-toggle="tab">表</a></li> -->
+						</ul>
+					</div>
+					<div class="aside_main">
+						<div class="tab-content">
+							<div class="tab-pane active" id="huabu">
+								<div class="m_u_box">
+									<div id="vue-create-attr-edit-list-div-canvas">
+										<div class="bi-attr-edit-list-div">
+											<h4>画布基础设定</h4>
+											<div class="bi-attr-edit-list-div-rengs">
+												<div class="bi-attr-edit-item-main">
+													<div class="bi-attr-edit-item-title">名称</div>
+													<div class="bi-attr-edit-item-comp">
+														<input class="bi-input-text" type="text" placeholder="请输入名称">
+													</div>
+													<div class="bi-attr-edit-item-end-div"></div>
+												</div>
+											</div>
+											<div class="bi-attr-edit-list-div-rengs">
+												<div class="bi-attr-edit-item-main">
+													<div class="bi-attr-edit-item-title">风格</div>
+													<div class="bi-attr-edit-item-comp">
+														<div class="bi-attr-edit-item-comp-pack">
+															<div class="bi-radio-list-div">
+																<label class="bi-radio-list-custom">
+																	<input type="radio" id="radio-canvas-bg-1" name="radio1" checked>
+																	<label for="radio-canvas-bg-1" onclick="switchCanvasBg(0)"></label>
+																	<img src="images/fenge1.jpg" alt="" onclick="switchCanvasBg(0)">
+																</label>
+															</div>
+															<div class="bi-radio-list-div">
+																<label class="bi-radio-list-custom">
+																	<input type="radio" id="radio-canvas-bg-2" name="radio1">
+																	<label for="radio-canvas-bg-2" onclick="switchCanvasBg(1)"></label>
+																	<img src="images/fenge2.jpg" alt="" onclick="switchCanvasBg(1)">
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="bi-attr-edit-list-div-rengs">
+												<div class="bi-attr-edit-item-main">
+													<div class="bi-attr-edit-item-title" style="width: 20%;">
+														<div class="bi-attr-edit-item-checkbox" style="color: #000">
+															<label class="checkbox-custom" style="cursor: auto;">
+																<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp; </label>
+														</div>
+													</div>
+													<div class="bi-attr-edit-item-comp" style="width: 80%;">
+														<div class="bi-attr-edit-item-comp-pack">
+															<div class="enable_bg">
+																<div class="checkbox">
+																	<label class="checkbox-custom">
+																		<input type="checkbox" name="checkboxA" checked="checked">
+																		<i class="icon_checked" id="blackimg" onclick="startBg(this)"></i>
+																		<lable onclick="startBg(this)">启用背景图</lable>
+																	</label>
+																</div>
+															</div>
+															<div class="setup_bg clearfix bottomImg hide">
+																<div class="setup_pic">
+																	<img id="bottomimg" src="">
+																</div>
+																<div class="setup_btn" onclick="showSettingBgPop()">
+																	<a class="btn btn-green btn-sm">设置</a>
+																</div>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+													</div>
+													<div class="bi-attr-edit-item-end-div"></div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="bi-attr-edit-list-div">
+											<h4>画布通用宽高比例</h4>
+											<ul>
+												<li>
+													<input type="radio" id="radio-canvas-rate-1" name="radio2" checked>
+													<label for="radio-canvas-rate-1" onclick="switchCanvasRate(1)">自适应（多屏自适应）</label>
+												</li>
+												<li>
+													<input type="radio" id="radio-canvas-rate-2" name="radio2">
+													<label for="radio-canvas-rate-2" onclick="switchCanvasRate(2)">16：9（电视屏）</label>
+												</li>
+												<li>
+													<input type="radio" id="radio-canvas-rate-3" name="radio2">
+													<label for="radio-canvas-rate-3" onclick="switchCanvasRate(3)"> 9：16（手机屏）</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="guanlian"></div>
+							<div class="tab-pane" id="shebiao"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="aside_md_sm" id="text-edit-panel" style="display:none">
+				<div class="aside_sm_box">
+					<div class="m_panel_heading" style="border-bottom:1px solid #eee">
+						<ul class="nav_tab m_tab_side aside_sm_tab">
+							<li class="active"><a href="#huabu" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i> 编辑文本</a></li>
+							<!-- <li><a href="#guanlian" data-toggle="tab"><i class="glyphicon glyphicon-retweet"></i> 动态设置</a></li> -->
+						</ul>
+					</div>
+					<div class="aside_main">
+						<div class="tab-content">
+							<div class="tab-pane active" id="huabu">
+								<div class="m_u_box">
+									<div id="vue-create-attr-edit-list-div-text">
+										<div>
+											<div class="bi-attr-edit-list-div">
+												<h4></h4>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+
+														<div class="bi-attr-edit-item-comp" style="width: 100%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-check-list-ico" is="bi-check-list-ico">
+																	<div class="bi-check-list-ico-div" style="width: 16.666666666666668%;">
+																		<a id="text-weight" title="加粗" style="">
+																			<i class="glyphicon glyphicon-bold"></i>
+																		</a>
+																	</div>
+																	<div class="bi-check-list-ico-div" style="width: 16.666666666666668%;">
+																		<a id="text-tilt" title="斜体" style="">
+																			<i class="glyphicon glyphicon-italic"></i>
+																		</a>
+																	</div>
+																	<div class="bi-check-list-ico-div" style="width: 16.666666666666668%;">
+																		<a id="text-underline" title="下划线" style="">
+																			<i class="glyphicon glyphicon-text-width"></i>
+																		</a>
+																	</div>
+																	<div style="clear: left;"></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<!-- <div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;左边距 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 0%; width: 100%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 0%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 0%; margin-left: -11.5px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">0</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style="">
+																		<input class="bi-input-number-range-input" placeholder="0" style="" id="text-margin-left-input"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;右边距 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 0%; width: 100%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 0%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 0%; margin-left: -11.5px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">0</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="0" style="" id="text-margin-right-input"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;上边距 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 0%; width: 100%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 0%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 0%; margin-left: -11.5px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">0</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="0" style="" id="text-margin-top-input"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;下边距 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 0%; width: 100%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 0%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 0%; margin-left: -11.5px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">0</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="0" style="" id="text-margin-bottom-input"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div> -->
+											</div>
+											<div class="bi-attr-edit-list-div">
+												<h4></h4>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;字体 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div is="bi-select-text">
+																	<select class="bi-select-text-select" id="text-font-family-select">
+																		<option value="Microsoft YaHei">微软雅黑</option>
+																		<option value="SimSun">宋体</option>
+																		<option value="SimH">黑体</option>
+																		<option value="KaiTi">楷体</option>
+																		<option value="LiSu">隶书</option>
+																		<option value="YouYuan">幼圆</option>
+																		<option value="STXihei">华文细黑</option>
+																		<option value="LanTingCuHeiK">兰亭粗黑 K</option>
+																		<option value="LanTingXianHei">兰亭纤细</option>
+																	</select>
+
+																	<div _on="true"></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;颜色 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-color-edit" is="bi-color-edit">
+																	<div class="bi-color-edit-div-back">
+																		<div id="text-font-color"  class="bi-color-edit-div" style="background:;"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input  type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;字号 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2" id="text-size-slider">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 2.77778%; width: 97.2222%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 2.77778%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 2.77778%; margin-left: -15px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">20</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="20" style="" id="text-font-size"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;字距 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 2%; width: 98%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 2%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 2%; margin-left: -11.5px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">1</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="1" style="" id="text-font-space"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;行距 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 30%; width: 70%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 30%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 30%; margin-left: -15px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">30</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="30" style="" id="text-font-height"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;底色 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-color-edit" is="bi-color-edit">
+																	<div class="bi-color-edit-div-back">
+																		<div class="bi-color-edit-div"   id="text-border-color-div" style="background:rgba(255,255,255,1);"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;透明 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2" id="text-opacity-slider">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 100%; width: 0%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 100%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 100%; margin-left: -20px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">1.00</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="1" style="" id="text-opacity-input" min="0" max="1"><span></span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+											</div>
+											<div class="bi-attr-edit-list-div">
+												<h4></h4>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;外框 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div is="bi-select-text">
+																	<select class="bi-select-text-select" id="text-border-line-select">
+																		<option value="none">无</option>
+																		<option value="solid">实线</option>
+																		<option value="dashed">虚线</option>
+																	</select>
+
+																	<div _on="true"></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;粗细 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 10%; width: 90%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 10%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 10%; margin-left: -11.5px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">1</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="1" style="" id="text-border-weight-input"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;圆角 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-input-number-range" is="bi-input-number-range">
+																	<div class="bi-input-number-range-retouv2">
+																		<div class="bi-input-number-range-slider-horizontal">
+																			<div class="bi-input-number-range-slider-track">
+																				<div class="bi-input-number-range-slider-selection" style="left: 25%; width: 75%;"></div>
+																				<div class="bi-input-number-range-slider-handle" style="left: 25%;"></div>
+																			</div>
+																			<div class="bi-input-number-range-tooltip" style="top: -30px; left: 25%; margin-left: -11.5px;">
+																				<div class="bi-input-number-range-tooltip-arrow"></div>
+																				<div class="bi-input-number-range-tooltip-inner template-grid-number">5</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="bi-input-number-range-retouv3" style=""><input class="bi-input-number-range-input"
+																		 placeholder="5" style="" id="text-border-radius-input"><span>px</span></div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+												<div class="bi-attr-edit-list-div-rengs">
+													<div class="bi-attr-edit-item-main">
+														<div class="bi-attr-edit-item-title" style="width: 20%;">
+															<div class="bi-attr-edit-item-checkbox" style="color: #000">
+																<label class="checkbox-custom" style="cursor: auto;">
+																	<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																	<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;颜色 </label>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-comp" style="width: 80%;">
+															<div class="bi-attr-edit-item-comp-pack">
+																<div class="bi-color-edit" is="bi-color-edit">
+																	<div class="bi-color-edit-div-back">
+																		<div class="bi-color-edit-div" style="background:#aaa;" id="text-border-color-input"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+														</div>
+														<div class="bi-attr-edit-item-end-div"></div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="guanlian">
+								<div class="m_u_box">
+									<div id="vue-create-attr-dynamic-setting-div-text">
+										<div class="">
+											<div _ds_id="0"></div> <!-- 触发用 -->
+											<div class="bi-dynamic-set-list-on-div">
+												<div style="width: 100%;">
+													<div class="bi-radio-list-maindiv">
+														<div class="bi-radio-list-div" style="width: 50%;">
+															<label class="bi-radio-list-custom" style="">
+																<input class="bi-public-radio-input" type="radio" checked="" _id="0" name="radio513703373">
+
+
+																<i class="bi-public-radio-true"></i> &nbsp;禁用动态
+
+															</label>
+														</div>
+														<div class="bi-radio-list-div" style="width: 50%;">
+															<label class="bi-radio-list-custom" style="">
+																<input class="bi-public-radio-input" type="radio" _id="1" name="radio513703373">
+
+
+																<i class="bi-public-radio-false"></i> &nbsp;启用动态
+
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="bi-dynamic-set-list-on-list-div" style="display: none;">
+												<div class="bi-attr-edit-item-main">
+													<div class="bi-attr-edit-item-title" style="width: 60%;">
+														<div class="bi-attr-edit-item-checkbox" style="color: #000">
+															<label class="checkbox-custom" style="cursor: auto;">
+																<input type="checkbox" class="bi-public-checkbox-input" disabled="" style="display: none;">
+
+																<i class="bi-public-checkbox-true" style="display: none;"></i> &nbsp;设置数据字段 </label>
+														</div>
+													</div>
+													<div class="bi-attr-edit-item-comp" style="width: 40%;">
+														<div class="bi-attr-edit-item-comp-pack">
+															<div class="bi-button-div" is="bi-button">
+																<a class="bi-button bi-button-add-right" style=""> 设置 </a>
+																<div class="bi-button-clear-right"></div>
+															</div>
+														</div>
+														<div class="bi-attr-edit-item-mark" style="width:0;height: 0;"></div>
+													</div>
+													<div class="bi-attr-edit-item-end-div"></div>
+												</div>
+												<div style="display: none;">
+													<!-- 表名、字段（可点击设置的）、联动列表、保存按钮 -->
+													<div class="bi-dynamic-set-list-table"></div>
+													<ul>
+
+													</ul>
+
+
+
+													<div class="bi-split-line bi-split-line-dashed-one"></div>
+													<div>
+														<span>值字段：</span>
+														<select>
+
+														</select>
+													</div>
+													<div class="bi-dynamic-set-list-linkage-title">联动条件</div>
+													<div class="bi-linkage-condition-edit-buts" style="margin-top: -37px;">
+														<span>+</span>
+													</div>
+
+
+
+
+													<div class="bi-split-line bi-split-line-dashed-one"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--wrap_content end-->
+
+	<!--set-bg-pop begin-->
+	<div id="pop-windows-for-type" style="position: fixed; z-index: 999; top: 0px; display: none; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">
+		<div style="display: table-cell; vertical-align: middle; text-align: center;">
+			<div id="pop-windows-for-type-comp-832977" style="display:inline-block;">
+				<div class="layerModel_wrapper">
+					<div class="layerModel_content">
+						<a class="layerModel_closeBtn" onclick="hideSettingBgPop()"><i class="glyphicon glyphicon-remove"></i></a>
+						<div class="layerModel_title">
+							<h2>画布背景图</h2>
+						</div>
+						<div class="canvasbg clearfix">
+							<div class="fc_tab clearfix">
+								<ul>
+									<li class="active"><a data-toggle="tab" href="#mybg">我的背景图</a></li>
+									<li><a data-toggle="tab" href="#shense">深色系素材</a></li>
+									<li><a data-toggle="tab" href="#qianse">浅色系素材</a></li>
+								</ul>
+							</div>
+							<div class="tab-content">
+								<div class="tab-pane active" id="mybg">
+									<div class="canvasbg_list">
+										<ul class="clearfix" id="img">
+											<li>
+												<div class="uploadbg">
+													<a>
+														<i class="glyphicon glyphicon-open"></i>
+														<p>上传图片</p>
+													</a>
+													<input type="file" class="pic_file" id="file">
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tab-pane" id="shense">
+									<div class="canvasbg_list">
+										<ul class="clearfix">
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/s_1.jpg" data-url="images/bg/q_2.jpg">
+													<div class="cb_bg" data="images/bg/s_1.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/s_2.jpg" data-url="images/bg/q_1.jpg">
+													<div class="cb_bg" data="images/bg/s_2.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/s_3.jpg" data-url="images/bg/q_3.png">
+													<div class="cb_bg" data="images/bg/s_3.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/s_4.jpg" data-url="images/bg/canvasbg.png">
+													<div class="cb_bg" data="images/bg/s_4.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/s_5.jpg" data-url="asset/default/images/canvasbg.png">
+													<div class="cb_bg" data="images/bg/s_5.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/s_6.jpg" data-url="asset/default/images/canvasbg.png">
+													<div class="cb_bg" data="images/bg/s_6.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tab-pane" id="qianse">
+									<div class="canvasbg_list">
+										<ul class="clearfix">
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/q_1.jpg" data-url="asset/default/images/canvasbg2.png">
+													<div class="cb_bg" data="images/bg/q_1.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/q_2.jpg" data-url="asset/default/images/canvasbg2.png">
+													<div class="cb_bg" data="images/bg/q_2.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/q_3.jpg" data-url="asset/default/images/canvasbg2.png">
+													<div class="cb_bg" data="images/bg/q_3.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/q_4.jpg" data-url="asset/default/images/canvasbg2.png">
+													<div class="cb_bg" data="images/bg/q_4.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/q_5.jpg" data-url="asset/default/images/canvasbg2.png">
+													<div class="cb_bg" data="images/bg/q_5.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+											<li>
+												<div class="canvasbg_box">
+													<img src="images/bg/q_6.jpg" data-url="asset/default/images/canvasbg2.png">
+													<div class="cb_bg" data="images/bg/q_6.jpg"><a class="btn btn-orange btn_xsm">使用</a></div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="show" style="position: fixed; z-index: 10000000; top: 0; display: none; width: 100%; height: 100%; background: rgba(0,0,0,0.5); text-align: center;">
+
+
+					<div style="display: table-cell; vertical-align: middle; text-align: center;">
+
+						<div style="display:inline-block;" id="show1">
+							加载中..........
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--set-bg-pop end-->
+	<!-- 预览 begin-->
+	<div id="preview-panel" style="width:100%;height:100%;position:absolute;top:0;left:0;display: none" tabindex="-1">
+		<div class="ng-modal">
+			<div class="ng-overlay"></div>
+			<div class="ng-content">
+				<a class="ng_closeBtn"><i class="glyphicon glyphicon-remove"></i></a>
+				<div class="layer_left_canvas">
+					<a class="ui_list_btn"> <i class="glyphicon glyphicon-menu-hamburger"></i> </a>
+					<div class="layer_canvas_box">
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<div class="dashboard_title">
+					<div class="preview_btn">
+						<a class="left_btn"><i class="glyphicon glyphicon-chevron-left"></i></a>
+						<a class="right_btn"><i class="glyphicon glyphicon-chevron-right"></i></a>
+					</div>
+					<p id="dashboard_preview_title"></p>
+				</div>
+				<div id="preview-box" class="canvas_content" style="width: 100%; height: 100%; overflow: auto;position: relative;top: -45px;">
+					<!-- <div class="dElement dCanvas light hover" id="canvas-1" style="background-color: transparent;position: absolute;width: 100%;height:100%;"></div>
+						<div class="d-background" style="position: absolute; width: 100%; height: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px; z-index: 1;"></div>
+						<img class="d-image" alt="" onselectstart="return false;" src="" style="position: absolute; width: 100%; height: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px; z-index: 2; border: none; display: none;">
+						<div class="d-content" style="position: relative; width: 100%; height: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px; z-index: 4;">
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 预览 end-->
+	<script src="./js/index.js"></script>
+	<script src="./js/utils/util.js"></script>
+	<script src="./js/draw.js"></script>
+	<script src="./js/setting.js"></script>
+</body>
+
+</html>
